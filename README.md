@@ -2,4 +2,4 @@
 Creacion de inicio de sistema de inventario.
 En cada carpeta se ha generado un readme explicando parte del codigo que se tiene.
 sigo trabajando en ello.
-es el avance hasta la fecha.
+es el avance hasta la fecha. 21-feb-2021
