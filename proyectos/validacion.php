@@ -14,7 +14,7 @@
 
     if($row['nombre'] == $nombre && $row ['password'] == $password){
         $_SESSION['usuario'] = $nombre;
-        header("Location: index.php");
+        header("Location: admin.php");
     }else{
         header("Location: login.php");
     }
