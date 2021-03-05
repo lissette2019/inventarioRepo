@@ -38,7 +38,6 @@
         }else{
             die("Error al actualizar datos..." . $conexion->error);
         }
-
     }else if(isset($_POST['eliminar'])){
         $id = $_POST['id'];
 
@@ -49,7 +48,6 @@
         }else{
             die("Error al Eliminar datos..." . $conexion->error);
         }
-
     }
 /*
     $sql = "SELECT id, nombre FROM invitados";
@@ -57,7 +55,7 @@
 
     $sql = "SELECT * FROM registros INNER JOIN invitados ON registros.invitado_id = invitados.id";
     $resultado = $conexion->query($sql);
-
+/*
     if($resultado->num_rows > 0){
         while($row = $resultado->fetch_assoc()){
             echo '<div>
@@ -70,7 +68,6 @@
                 </div>';
         }
     }
-
     $conexion->close();
-
+ */
 ?>
