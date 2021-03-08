@@ -11,4 +11,3 @@ Entrar a Git bash
 6. git add . aggit stregara todos los cambios.
 7. git commit -m 'comentar los cambios' 
 
-
