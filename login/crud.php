@@ -1,8 +1,9 @@
-<?php include('./includes/conexion.php'); ?>
+<?php include('./includes/conexion.php'); ?> <!-- conexion para base de datos-->
 
 <h2> Registro de invitados </h2>
 <br><br><br>
 <form action = "crud.php" method="post">
+    <!-- Datos de registro para BD enventos-->
     <input type="text" name="nombre" placeholder="Inserte nombre">
     <input type="text" name="apellido" placeholder="Inserte Apellido">
     <input type="text" name="direccion" placeholder="Inserte direccion">
@@ -16,7 +17,8 @@
         $direccion = $_POST['direccion'];
         $telefono = $_POST['telefono'];
         $fecha = date("y-m-d");
-        
+
+        #Insertar datos en tabla invitados
         $sql = "INSERT INTO invitados (id, nombre, apellido, direccion, telefono, fecha) 
         VALUES (NULL, '$nombre', '$apellido', '$direccion', '$telefono', '$fecha')";
 
@@ -30,6 +32,7 @@
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
 
+        #Actualizar datos en tabla invitados 
         $sql = "UPDATE invitados SET nombre = '$nombre' WHERE id = $id";
         $resultado = $conexion->query($sql);
 
@@ -41,7 +44,7 @@
 
     }else if(isset($_POST['eliminar'])){
         $id = $_POST['id'];
-
+        #Eliminar datos de tabla invitados
         $sql = "DELETE FROM invitados where id = $id";
 
         if($conexion->query($sql) === true){
