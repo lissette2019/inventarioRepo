@@ -19,6 +19,7 @@
         $direccion = $_POST['direccion'];
         $telefono = $_POST['telefono'];
         $fecha = date("y-m-d");
+        #POST para envio de datos a base de datos
         
         $sql = "INSERT INTO invitados (id, nombre, apellido, direccion, telefono, fecha) 
         VALUES (NULL, '$nombre', '$apellido', '$direccion', '$telefono', '$fecha')";
@@ -33,6 +34,7 @@
     }else if(isset($_POST['editar'])){
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
+        
 
         $sql = "UPDATE invitados SET nombre = '$nombre' WHERE id = $id";
         $resultado = $conexion->query($sql);
