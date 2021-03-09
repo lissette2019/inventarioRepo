@@ -1,4 +1,6 @@
-<?php include('./includes/conexion.php'); ?>
+<?php include('./includes/conexion.php');
+#Conexion Base de datos
+?>
 
 <h2> Registro de invitados </h2>
 <br><br><br>
@@ -11,6 +13,7 @@
 </form>
 <?php
     if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset ($_POST['direccion']) && isset ($_POST['telefono'])){
+    
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
         $direccion = $_POST['direccion'];
@@ -19,6 +22,7 @@
         
         $sql = "INSERT INTO invitados (id, nombre, apellido, direccion, telefono, fecha) 
         VALUES (NULL, '$nombre', '$apellido', '$direccion', '$telefono', '$fecha')";
+        #Inserto de campos hacia tabla invitados
 
         if( $conexion->query($sql) === true){
             echo "Datos insertados correctamente...";
@@ -32,6 +36,7 @@
 
         $sql = "UPDATE invitados SET nombre = '$nombre' WHERE id = $id";
         $resultado = $conexion->query($sql);
+        #Actualizacion de campos de tabla invitados
 
         if($conexion->query($sql) === true){
             echo "Datos actualizados correctamente...";
@@ -42,6 +47,7 @@
         $id = $_POST['id'];
 
         $sql = "DELETE FROM invitados where id = $id";
+        #Sentencia de eliminar registro
 
         if($conexion->query($sql) === true){
             echo "Datos Eliminados...";
@@ -49,12 +55,23 @@
             die("Error al Eliminar datos..." . $conexion->error);
         }
     }
-/*
-    $sql = "SELECT id, nombre FROM invitados";
-    $resultado = $conexion->query($sql);  */
+    $sql = "SELECT nombre FROM invitados";
+    $resultado = $conexion->query($sql);  
 
-    $sql = "SELECT * FROM registros INNER JOIN invitados ON registros.invitado_id = invitados.id";
-    $resultado = $conexion->query($sql);
+    if($resultado->num_rows > 0){
+        while($row = $resultado->fetch_assoc()){
+            echo '<div>' .$row['nombre'].'</div>';
+        }
+    }
+    $conexion->close();
+
+
+
+
+
+
+    #$sql = "SELECT * FROM registros INNER JOIN invitados ON registros.invitado_id = invitados.id";
+    #$resultado = $conexion->query($sql);
 /*
     if($resultado->num_rows > 0){
         while($row = $resultado->fetch_assoc()){
