@@ -2,7 +2,9 @@
 	include("../includes/conexion.php");
 	$rolId = $_REQUEST["id"]; // REQUEST es para obtener valores de la URL
 	$seleccionarValor = mysqli_query($conexion,"SELECT * FROM roles WHERE rolId='$rolId'");
+	#Seleccion de tabla roles y campo a mostrar 
 	$mostrarValor = mysqli_fetch_assoc($seleccionarValor);
+	#inicializacion de variables 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -23,6 +25,7 @@
 		<br>
 		<form action="crud/editar-rol.php" method="post">
 			<input type="hidden" name="rolId" value="<?php echo $rolId; ?>">
+			<!-- devuelve el valor que esta en campo de la tabla-->
 			<div class="row">
 				<div class="col-md-4" style="text-align: right;">
 					Nombre del Rol:

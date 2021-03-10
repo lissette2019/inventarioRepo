@@ -22,6 +22,7 @@
 				</div>
 				<div class="col-md-8">
 					<input type="text" name="nombreEmpleado" class="form-control" placeholder="Ingrese el Nombre de Empleado">
+						<!-- nombreEmpleado es nombre de variable que guarda el contenido de lo que ingresa el usuario-->
 				</div>
 			</div>
 			<br>

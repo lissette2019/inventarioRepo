@@ -1,8 +1,11 @@
 <?php 
 	include("../includes/conexion.php");
 	$empleadoId = $_REQUEST["id"]; 
+	#inicializacion de variable empleadoId con valor id de tabla
 	$seleccionarValor = mysqli_query($conexion,"SELECT * FROM empleados WHERE empleadoId='$empleadoId'");
+	#seleccion de tabla empleados con campo empleadoID
 	$mostrarValor = mysqli_fetch_assoc($seleccionarValor);
+	#inicializa mostrar valor con variable que muestra el valor de la sentencia SELECT
  ?>
  <!DOCTYPE html>
  <html lang="es">
@@ -23,12 +26,14 @@
  		<br>
  		<form action="crud/editar-empleado.php" method="post">
  			<input type="hidden" name="empleadoId" value="<?php  echo $empleadoId; ?>">
+			 	<!-- variable empleadoId contempla la impresion de $empleadoId de la sentencio de tabla -->
 	 		<div class="row">
 	 			<div class="col-md-4" style="text-align: right;">
 	 				Nombre de Empleado:
 	 			</div>
 	 			<div class="col-md-8">
 	 				<input type="text" name="nombreEmpleado" class="form-control" placeholder="Ingrese el nombre de empleado..." value="<?php echo $mostrarValor['empleado']; ?>">
+					 	<!-- variable nombreEmpleado adquiere lo que el usuario ingresa  -->
 	 			</div>
 	 		</div>
 	 		<br>

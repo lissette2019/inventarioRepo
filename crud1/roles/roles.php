@@ -21,6 +21,7 @@
 			</div>
 			<div class="col-md-2">
 				<a href="roles-agregar.php" class="btn btn-primary btn-block">Agregar</a>
+				<!-- redireccionamiemto a archivo agregar.php-->
 			</div>
 		</div>
 		<div class="table-responsive">
@@ -35,6 +36,7 @@
 				<tbody>
 					<?php 
 						$seleccionarValores = mysqli_query($conexion,"SELECT * FROM roles");
+						#inicializa variable para sentencia de seleccion de tabla roles
 						$n = 0;
 						while($recuperarColumnas = mysqli_fetch_assoc($seleccionarValores)) {
 							$n += 1;
@@ -42,11 +44,14 @@
 							<tr>
 								<td><?php echo $n; ?></td>
 								<td><?php echo $recuperarColumnas["nombre"]; ?></td>
+									<!--impresion de campos de bases de datos -->
 								<td>
 									<a href="roles-editar.php?id=<?php echo $recuperarColumnas['rolId']; ?>" class="btn btn-primary btn-xs">
+										<!-- redireccionamiento a archivo editar.php e impresion de campo rolId de base de dato-->
 										<i class="glyphicon glyphicon-pencil"></i>
 									</a>
 									<button type="button" class="btn btn-danger btn-xs" onclick="eliminar(<?php echo $recuperarColumnas['rolId']; ?>);">
+											<!-- eliminar campo rolid  -->
 										<i class="glyphicon glyphicon-trash"></i>
 									</button>
 								</td>
@@ -68,6 +73,6 @@
     			location.href = "crud/eliminar-rol.php?rolId="+rolId;
     		} else {
     		}
-    	}
-    </script>
+    	} 	
+    </script> 	<!-- Confirmacion de eliminar registro rolId -->
 </html>

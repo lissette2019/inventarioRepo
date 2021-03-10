@@ -36,13 +36,15 @@
 					<tbody>
 						<?php 
 						$seleccionValor = mysqli_query($conexion, "SELECT * FROM empleados");
+						#sentencia de seleccion tabla empleados
 						$n=0;
 						while ($recuperar = mysqli_fetch_assoc($seleccionValor)){
 							$n+=1;
-						?>
+						?>	<!-- inicializa variable $recuperar con select de tabla -->
 							<tr>
 								<td><?php echo $n; ?></td>
 								<td><?php echo $recuperar["empleado"]; ?></td>
+									<!--impresion de campo empleado de tabla empleados -->
 								<td>
 									<a href="empleados-editar.php?id=<?php echo $recuperar['empleadoId']; ?>" class="btn btn-primary btn-xs">
 										<i class="glyphicon glyphicon-pencil"></i>

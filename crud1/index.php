@@ -17,9 +17,11 @@
 		<div class="row">
 			<div class="col-md-6">
 				<a href="roles/roles.php" class="btn btn-primary btn-block">Roles</a>
+				<!-- redireccionamiento a archivo roles -->
 			</div>
 			<div class="col-md-6">
 				<a href="empleados/empleados.php" class="btn btn-primary btn-block">Empleados</a>
+				<!-- redireccionamiento a archivo empleados -->
 			</div>
 		</div>
 	</div>
