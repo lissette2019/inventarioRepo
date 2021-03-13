@@ -25,7 +25,7 @@
     </div> <br><br>
     <div class="col-md-6">
         <input type="text" name="direccion" class="form-control" placeholder="Inserte direccion">
-    </div>
+    </div> 
     <div class="col-md-6">
         <input type="text" name="telefono" class="form-control" placeholder="Inserte telefono">
     </div><br><br>
@@ -33,6 +33,7 @@
 		<button type="submit" class="btn btn-primary btn-block">Registrar Usuario</button>
 	</div>
 </form>
+<br> <br>
 <?php
     if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset ($_POST['direccion']) && isset ($_POST['telefono'])){
         $nombre = $_POST['nombre'];
