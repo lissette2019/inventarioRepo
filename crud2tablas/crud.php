@@ -1,13 +1,37 @@
-<?php include('./includes/conexion.php'); ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Roles - CRUD</title>
+	<link href="./librerias/css/bootstrap.min.css" rel="stylesheet">
+    <?php include('./includes/conexion.php'); ?>
 
-<h2> Registro de invitados </h2>
-<br><br><br>
+</head>
+<body>
+<div class="container">
+		<div class="row" style="text-align: center;">
+			<div class="col-md-12">
+				<h2>Registro de invitados</h2>
+			</div>
+		</div>
 <form action = "crud.php" method="post">
-    <input type="text" name="nombre" placeholder="Inserte nombre">
-    <input type="text" name="apellido" placeholder="Inserte Apellido">
-    <input type="text" name="direccion" placeholder="Inserte direccion">
-    <input type="text" name="telefono" placeholder="Inserte telefono">
-    <input type="submit" value="Registrar usuario">
+    <div class="col-md-6">
+        <input type="text" name="nombre" class="form-control" placeholder="Inserte nombre">
+    </div> 
+    <div class="col-md-6">
+        <input type="text" name="apellido" class="form-control" placeholder="Inserte Apellido">
+    </div> <br><br>
+    <div class="col-md-6">
+        <input type="text" name="direccion" class="form-control" placeholder="Inserte direccion">
+    </div>
+    <div class="col-md-6">
+        <input type="text" name="telefono" class="form-control" placeholder="Inserte telefono">
+    </div><br><br>
+    <div class="col-md-2">
+		<button type="submit" class="btn btn-primary btn-block">Registrar Usuario</button>
+	</div>
 </form>
 <?php
     if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset ($_POST['direccion']) && isset ($_POST['telefono'])){

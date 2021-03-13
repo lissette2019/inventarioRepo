@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$nombre = $_SESSION['nombre'];
+#$nombre = $_SESSION['nombre'];
 
 ?>
 
@@ -14,7 +14,6 @@ $nombre = $_SESSION['nombre'];
     <title>Bienvenido</title>
 </head>
 <body>
-    <?php echo 'Bienvenido Usuario'.$nombre; ?>
-
+  <?php echo 'Bienvenido Usuario'?>
 </body>
 </html>
