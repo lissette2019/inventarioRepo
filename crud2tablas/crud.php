@@ -13,7 +13,7 @@
 <div class="container">
 		<div class="row" style="text-align: center;">
 			<div class="col-md-12">
-				<h2>Registro de invitados</h2>
+				<h2>Registros Usuarios</h2>
 			</div>
 		</div>
 <form action = "crud.php" method="post">
@@ -29,8 +29,11 @@
     <div class="col-md-6">
         <input type="text" name="telefono" class="form-control" placeholder="Inserte telefono">
     </div><br><br>
-    <div class="col-md-2">
+    <div class="col-md-6">
 		<button type="submit" class="btn btn-primary btn-block">Registrar Usuario</button>
+	</div>
+    <div class="col-md-6">
+    <a href="editar-registro.php" class="btn btn-primary btn-block">Ver registros</a>
 	</div>
 </form>
 <br> <br>
@@ -80,21 +83,21 @@
     $sql = "SELECT id, nombre FROM invitados";
     $resultado = $conexion->query($sql);  */
 
-    $sql = "SELECT * FROM registros INNER JOIN invitados ON registros.invitado_id = invitados.id";
-    $resultado = $conexion->query($sql);
+   # $sql = "SELECT * FROM registros INNER JOIN invitados ON registros.invitado_id = invitados.id";
+    #$resultado = $conexion->query($sql);
 
-    if($resultado->num_rows > 0){
-        while($row = $resultado->fetch_assoc()){
-            echo '<div>
-                    <form action = "crud.php" method="post">
-                        <input type="hidden" name="id" value="'.$row['id'].'">
-                        <input type="text" name="nombre" value="'.$row['nombre'].'">
-                        <input type="submit" name="editar" value="Editar">
-                        <input type="submit" name="eliminar" value="Eliminar">
-                    </form>
-                </div>';
-        }
-    }
+   # if($resultado->num_rows > 0){
+    #while($row = $resultado->fetch_assoc()){
+    #        echo '<div>
+    #                <form action = "crud.php" method="post">
+    #                    <input type="hidden" name="id" value="'.$row['id'].'">
+    #                    <input type="text" name="nombre" value="'.$row['nombre'].'">
+    #                    <input type="submit" name="editar" value="Editar">
+    #                    <input type="submit" name="eliminar" value="Eliminar">
+    #                </form>
+    #            </div>';
+    #    }
+    #}
 
     $conexion->close();
 
