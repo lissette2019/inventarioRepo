@@ -13,6 +13,6 @@
 	} else {
 		// ACTUALIZAR tabla ESTABLECIENDO columna1='$variable1',columnaN='$variableN' DONDE id='idAModificar'
 		$update = mysqli_query($conexion,"UPDATE eventos SET nombre='$nombre' WHERE id='$id'");
-		header("Location: ./crud.php");
+		header("Location: ./index.php");
 	}
 ?>
