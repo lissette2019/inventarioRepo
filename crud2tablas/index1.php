@@ -29,7 +29,7 @@
     )";
  */
     if( $conexion->query($sql) === true){
-        echo"La tabla se creo correctamente papu!!...";
+        echo"La tabla se creo correctamente...";
     } else {
         die("Error al crear tabla ¬¬ " . $conexion->error);
     }

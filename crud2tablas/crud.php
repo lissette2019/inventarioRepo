@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Roles - CRUD</title>
+	<title>Registro</title>
 	<link href="./librerias/css/bootstrap.min.css" rel="stylesheet">
     <?php include('./includes/conexion.php'); ?>
 
@@ -33,7 +33,7 @@
 		<button type="submit" class="btn btn-primary btn-block">Registrar Usuario</button>
 	</div>
     <div class="col-md-6">
-    <a href="editar-registro.php" class="btn btn-primary btn-block">Ver registros</a>
+    <a href="registro-editar.php" class="btn btn-primary btn-block">Ver registros</a>
 	</div>
 </form>
 <br> <br>
