@@ -1,18 +1,58 @@
-<?php 
-	include("./includes/conexion.php");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<?php  include("./includes/conexion.php");?>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Actualizar</title>
+</head>
+<body>
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Direccion</th>
+						<th>Telefono</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php 
+						$seleccionarValores = mysqli_query($conexion,"SELECT * FROM invitados");
+						#inicializa variable para sentencia de seleccion de tabla roles
+						$n = 0;
+						while($recuperarColumnas = mysqli_fetch_assoc($seleccionarValores)) {
+							$n += 1;
+					?>
+							<tr>
+								<td><?php echo $n; ?></td>
+								<td><?php echo $recuperarColumnas["nombre"]; ?></td>
+									<!--impresion de campos de bases de datos -->
+								<td>
+									<a href="registro-editar.php?id=<?php echo $recuperarColumnas['id']; ?>" class="btn btn-primary btn-xs">
+										<!-- redireccionamiento a archivo editar.php e impresion de campo rolId de base de dato-->
+										<i class="glyphicon glyphicon-pencil"></i>
+									</a>
+									<button type="button" class="btn btn-danger btn-xs" onclick="eliminar(<?php echo $recuperarColumnas['id']; ?>);">
+											<!-- eliminar campo rolid  -->
+										<i class="glyphicon glyphicon-trash"></i>
+									</button>
+								</td>
+							</tr>
+					<?php 
+						} // cierre while $recuperarColumnas
+					?>
+				</tbody>
+			</table>
 
-	// obtener inputs entre las etiquetas form
-	$id = $_POST["id"];
-	$nombre = $_POST["nombre"]; // Nuevo nombre del Rol
-    $apellido = $_POST["apellido"];
-    $direccion = $_POST["direccion"];
-    $direccion = $_POST["telefono"];
+</body>
+</html>
 
-	if($nombre == "") {
-		header("Location: ./.php?id=$id"); // redireccionar con PHP enviando variable
-	} else {
-		// ACTUALIZAR tabla ESTABLECIENDO columna1='$variable1',columnaN='$variableN' DONDE id='idAModificar'
-		$update = mysqli_query($conexion,"UPDATE eventos SET nombre='$nombre' WHERE id='$id'");
-		header("Location: ./index.php");
-	}
-?>
+
+
+
+		
+	
