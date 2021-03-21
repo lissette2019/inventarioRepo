@@ -2,7 +2,7 @@
 	include("./includes/conexion.php");
 	$id = $_REQUEST["id"]; // REQUEST es para obtener valores de la URL
 	$seleccionarValor = mysqli_query($conexion,"SELECT * FROM invitados WHERE id='$id'");
-	$seleccionarNombre = mysqli_query($conexion,"SELECT * FROM invitados WHERE id='$apellido'");
+	$seleccionarNombre = mysqli_query($conexion,"SELECT * FROM invitados WHERE apellido='$apellido'");
 	#Seleccion de tabla roles y campo a mostrar 
 	$mostrarValor = mysqli_fetch_assoc($seleccionarValor);
 	$mostrarApellido = mysqli_fetch_assoc($seleccionarNombre);
