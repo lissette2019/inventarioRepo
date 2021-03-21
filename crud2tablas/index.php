@@ -16,7 +16,7 @@
 				<h2>Registros Usuarios</h2>
 			</div>
 		</div>
-<form action = "crud.php" method="post">
+<form  method="post">
     <div class="col-md-6">
         <input type="text" name="nombre" class="form-control" placeholder="Inserte nombre">
     </div> 
@@ -33,7 +33,7 @@
 		<button type="submit" class="btn btn-primary btn-block">Registrar Usuario</button>
 	</div>
     <div class="col-md-6">
-    <a href="registro-editar.php" class="btn btn-primary btn-block">Ver registros</a>
+    <a href="editar-registro.php" class="btn btn-primary btn-block">Ver registros</a>
 	</div>
 </form>
 <br> <br>

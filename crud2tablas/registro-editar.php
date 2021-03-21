@@ -2,10 +2,11 @@
 	include("./includes/conexion.php");
 	$id = $_REQUEST["id"]; // REQUEST es para obtener valores de la URL
 	$seleccionarValor = mysqli_query($conexion,"SELECT * FROM invitados WHERE id='$id'");
-	$seleccionarNombre = mysqli_query($conexion,"SELECT * FROM invitados WHERE apellido='$apellido'");
+	#$seleccionar = mysqli_query($conexion,"SELECT * FROM invitados WHERE apellido='$apellido'");
+
 	#Seleccion de tabla roles y campo a mostrar 
 	$mostrarValor = mysqli_fetch_assoc($seleccionarValor);
-	$mostrarApellido = mysqli_fetch_assoc($seleccionarNombre);
+	#$mostrar = mysqli_fetch_assoc($seleccionar);
 	#inicializacion de variables 
 ?>
 <!DOCTYPE html>
@@ -21,7 +22,7 @@
 	<div class="container">
 		<div class="row" style="text-align: center;">
 			<div class="col-md-12">
-				<h2>Mantenimiento de registro - Editar</h2>
+				<h2>Editar registro</h2>
 			</div>
 		</div>
 		<br>
@@ -30,7 +31,7 @@
 			<!-- devuelve el valor que esta en campo de la tabla-->
 			<div class="row">
 				<div class="col-md-4" style="text-align: right;">
-					Nombre del Rol:
+					Nombre usuario:
 				</div>
 				<div class="col-md-8">
 					<input type="text" name="nombreRol" class="form-control" placeholder="Ingrese el Nombre del Rol..." value="<?php echo $mostrarValor['nombre']; ?>">
