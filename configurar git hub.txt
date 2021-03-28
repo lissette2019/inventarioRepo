@@ -1,0 +1,13 @@
+Entrar a Git bash
+1. git config --global user.name "EmanuelGuerra"
+2. git config --global user.email "emanuelguerra9610@gmail.com"
+3. crear y entrar a carpeta para crear el repo
+4. git init dentro de carpeta creada
+
+-git remote add origin https://github.com/EmanuelGuerra/inventarioRepo.git
+
+
+5. colocar archivos en carpeta y 'git status'
+6. git add . aggit stregara todos los cambios.
+7. git commit -m 'comentar los cambios' 
+
